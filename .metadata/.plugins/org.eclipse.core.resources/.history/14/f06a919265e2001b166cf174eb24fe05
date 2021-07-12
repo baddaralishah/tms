@@ -1,5 +1,0 @@
-package com.badar.tms.controllers.api.v1;
-
-public class TicketStatusController {
-
-}

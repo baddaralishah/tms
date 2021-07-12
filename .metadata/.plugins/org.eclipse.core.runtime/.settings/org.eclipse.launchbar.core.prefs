@@ -1,9 +1,0 @@
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
-LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:TmsApplication,org.eclipse.launchbar.core.descriptorType.default\:tms - TmsApplication
-eclipse.preferences.version=1
-org.eclipse.launchbar.core.descriptorType.default\:TmsApplication/activeLaunchMode=run
-org.eclipse.launchbar.core.descriptorType.default\:TmsApplication/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
-org.eclipse.launchbar.core.descriptorType.default\:tms\ -\ TmsApplication/activeLaunchMode=run
-org.eclipse.launchbar.core.descriptorType.default\:tms\ -\ TmsApplication/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
