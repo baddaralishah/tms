@@ -1,0 +1,57 @@
+package com.badar.tms.models;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table(name="Tickets")
+public class Tickets {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ticket_id")
+	private long id;
+	
+	@Column(name = "start_time",nullable = true)
+	private Date starTime;
+	@Column(name = "End_time",nullable = true)
+	private Date EndTime;
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    @CreatedDate
+    private Date createdAt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at", nullable = false)
+    @LastModifiedDate
+    private Date updatedAt;
+	@Column(name="ticket_name",nullable= false)
+	private String title;
+	@Column(name="ticket_description",nullable= true)
+	private String description;
+	
+	@Transient
+	private Long parentId;
+
+
+	@ManyToOne(fetch = FetchType.LAZY, optional=true)
+	@JoinColumn(name="parent_id")
+	private TableName parent;
+
+	@OneToMany(mappedBy="parent", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true)
+	private Set<TableName> children = new HashSet<TableName>();
+	
+}

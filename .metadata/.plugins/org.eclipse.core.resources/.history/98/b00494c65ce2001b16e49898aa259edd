@@ -1,0 +1,6 @@
+package com.badar.tms.enumrations;
+
+public enum MediaStatuses {
+
+	ACTIVE,DEACTIVE;
+}

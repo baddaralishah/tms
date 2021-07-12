@@ -1,0 +1,14 @@
+package com.badar.tms.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.badar.tms.models.TicketMedias;
+import com.badar.tms.models.Tickets;
+
+@Repository
+public interface TicketMediaRepository  extends JpaRepository<TicketMedias, Long>{
+
+	List<TicketMedias> findByTicketId(Tickets ticket_id);
+}

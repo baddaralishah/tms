@@ -1,0 +1,5 @@
+package com.badar.tms.services;
+
+public class MediaService {
+
+}

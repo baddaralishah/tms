@@ -1,0 +1,12 @@
+package com.badar.tms.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.badar.tms.repositories.TicketStatusRepository;
+
+@Service
+public class StatuService {
+
+	@Autowired
+	TicketStatusRepository repository;
+}

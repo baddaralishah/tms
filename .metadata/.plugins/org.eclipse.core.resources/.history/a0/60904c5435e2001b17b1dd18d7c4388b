@@ -1,0 +1,10 @@
+package com.badar.tms.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.badar.tms.models.Tickets;
+
+@Repository
+public class TicketRepository extends JpaRepository<Tickets, Long>{
+
+}

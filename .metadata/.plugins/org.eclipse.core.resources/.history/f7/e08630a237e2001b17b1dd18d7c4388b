@@ -1,0 +1,28 @@
+package com.badar.tms.models;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Table(name="Tickets")
+public class Tickets {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private Date timeSpendOnTask;
+	@Column(name = "startTime")
+	@Nul
+	private Date starTime;
+	@Column(name = "EndTime")
+	private Date EndTime;
+	
+	private String title;
+	private String description;
+	
+	
+}

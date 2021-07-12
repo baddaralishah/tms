@@ -1,0 +1,18 @@
+package com.badar.tms.repositories;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+import com.badar.tms.models.TStatuses;
+
+@Repository
+@Transactional
+public interface TicketStatusRepository  extends JpaRepository<TStatuses, Long>{
+
+	@Query("select * from TStatuses where ticket_id =:?1")
+	List<TStatuses> findByTicketId(long id);
+}

@@ -1,0 +1,5 @@
+package com.badar.tms.utility;
+
+public class Message {
+
+}

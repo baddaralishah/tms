@@ -1,0 +1,99 @@
+package com.badar.tms.models;
+
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import com.badar.tms.enumrations.TicketStatuses;
+
+@Entity
+public class TStatuses {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Enumerated(EnumType.STRING)
+	private TicketStatuses status;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false)
+    @CreatedDate
+    private Date createdAt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated_at", nullable = false)
+    @LastModifiedDate
+    private Date updatedAt;
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ticket_id", nullable = false)
+    private Tickets ticket_id;
+
+	public TStatuses() {
+		super();
+	}
+
+	public TStatuses(TicketStatuses status, Tickets ticket) {
+		super();
+		this.status = status;
+		this.ticket_id = ticket;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public TicketStatuses getStatus() {
+		return status;
+	}
+
+	public void setStatus(TicketStatuses status) {
+		this.status = status;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Tickets getTicket() {
+		return ticket_id;
+	}
+
+	public void setTicket(Tickets ticket) {
+		this.ticket_id = ticket;
+	}
+
+	@Override
+	public String toString() {
+		return "TStatuses [getId()=" + getId() + ", getStatus()=" + getStatus() + ", getCreatedAt()=" + getCreatedAt()
+				+ ", getUpdatedAt()=" + getUpdatedAt() + ", getTicket()=" + getTicket() + "]";
+	}
+    
+    
+}

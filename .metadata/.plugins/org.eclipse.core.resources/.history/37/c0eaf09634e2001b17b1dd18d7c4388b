@@ -1,0 +1,10 @@
+package com.badar.tms.models;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Tickets {
+	private long id;
+	
+	
+}

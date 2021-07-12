@@ -1,0 +1,21 @@
+package com.badar.tms.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Medias")
+public class TicketMedias {
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ticket_id")
+	private long id;
+	@Lob
+	private String url;
+}

@@ -1,0 +1,11 @@
+package com.badar.tms.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.badar.tms.models.TStatuses;
+
+@Repository
+public interface TicketStatusRepository  extends JpaRepository<TStatuses, Long>{
+
+}

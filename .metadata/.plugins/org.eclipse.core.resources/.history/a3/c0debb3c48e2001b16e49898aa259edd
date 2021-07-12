@@ -1,0 +1,5 @@
+package com.badar.tms.repositories;
+
+public interface TicketMediaRepository {
+
+}

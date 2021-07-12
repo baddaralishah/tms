@@ -1,0 +1,5 @@
+package com.badar.tms.models;
+
+public class Tickets {
+
+}

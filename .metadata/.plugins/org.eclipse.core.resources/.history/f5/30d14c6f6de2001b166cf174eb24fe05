@@ -1,0 +1,36 @@
+package com.badar.tms;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.badar.tms.models.Tickets;
+import com.badar.tms.repositories.TicketRepository;
+import com.badar.tms.repositories.TicketStatusRepository;
+
+@SpringBootApplication
+public class TmsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TmsApplication.class, args);
+	}
+	
+	@Bean
+    public CommandLineRunner mappingDemo(TicketRepository ticket,
+                                         TicketStatusRepository status) {
+        return args -> {
+
+            Tickets data1 = new Tickets();
+            data1.setTitle("Configurations needed to start for project");
+            data1.setDescription("Kindly as your manager as per confusion");
+            data1.setTimeToSpend("10 hrs");
+            data1.setParent(null);
+
+            pageRepository.save(new Page(1, "Introduction contents", "Introduction", book));
+            pageRepository.save(new Page(65, "Java 8 contents", "Java 8", book));
+            pageRepository.save(new Page(95, "Concurrency contents", "Concurrency", book));
+        };
+    }
+
+}
